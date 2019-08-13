@@ -13,11 +13,11 @@ import java.util.ArrayList;
 @Controller(value = "/api")
 public class BookController {
 
-    private final BookRepository bookRepository;
+    private final BookService bookService;
 
-    public BookController(BookRepository bookRepository)
+    public BookController(BookService bookService)
     {
-        this.bookRepository = bookRepository;
+        this.bookService = bookService;
     }
 
     @Get("/book")
@@ -27,15 +27,13 @@ public class BookController {
         Book book = new Book();
         book.setTitle("The Stand");
         book.setPages(1000);
-       bookRepository.save(book);
-        return book;
+       return bookService.insertBook(book);
     }
-    
+
     @Get("/book/all")
     @Produces(MediaType.APPLICATION_JSON)
     public Iterable<Book> getAllBooks()
     {
-        return bookRepository.findAll();
+        return bookService.getAllBooks();
     }
 }
-
