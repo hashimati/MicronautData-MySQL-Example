@@ -8,6 +8,7 @@ import io.micronaut.http.annotation.Produces;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import java.util.ArrayList;
 
 @Controller(value = "/api")
 public class BookController {
@@ -28,6 +29,13 @@ public class BookController {
         book.setPages(1000);
        bookRepository.save(book);
         return book;
-
+    }
+    
+    @Get("/book/all")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Iterable<Book> getAllBooks()
+    {
+        return bookRepository.findAll();
     }
 }
+
