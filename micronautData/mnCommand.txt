@@ -1,0 +1,1 @@
+mn create-app com-hashimati-ahmed-micronautdata --profile service --lang java --build gradle

@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: com.hashimati.ahmed.micronautdata
+---
+testFramework: junit
+sourceLanguage: java
