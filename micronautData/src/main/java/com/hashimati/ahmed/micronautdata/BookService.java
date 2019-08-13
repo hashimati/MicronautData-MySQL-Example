@@ -1,8 +1,5 @@
 package com.hashimati.ahmed.micronautdata;
 
-import io.micronaut.http.MediaType;
-import io.micronaut.http.annotation.Get;
-import io.micronaut.http.annotation.Produces;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
